@@ -1,0 +1,33 @@
+ private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+         //   Console.WriteLine("value of a: {0}", a);
+         //   int [] heltal = new int [50];
+         //   lbltxtbox.Content = (heltal[1].ToString());
+         //   int heltal = 0;
+
+         //   1) Første del random heltal mellem 0 og 50
+
+              Random random = new Random();
+              int randomNumber = random.Next(0, 50);
+
+              lbltxtboxRandom.Content = Convert.ToString(randomNumber);
+
+        //    2) omvendt rækkefølge
+           
+        //    for (int heltal = 1; heltal < 50; heltal++)
+              for (int heltal = 1; heltal < 50; heltal = heltal + 1)
+              {
+                lbltxtboxForeach.Content = (heltal.ToString());
+              }
+
+        //    foreach (int omvendt in heltal);
+        //    lbltxtboxForeach.Content =
+        //    lblResultat.Content = Convert.ToString(resultat);
+        
+        
+        }
+
+
+    }
+}
