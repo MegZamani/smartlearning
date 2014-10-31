@@ -1,0 +1,29 @@
+ // Rumfang [Start]
+
+            //Nummer Box
+            decimal nummerRumfang;
+            nummerRumfang = Convert.ToDecimal(nummerRumfangBox.Text);
+
+            //Rumfang oversigt
+            decimal[] Rumfang = new decimal[5];
+            Rumfang[0] = 16.387M;     // 1 cu inch (in3) = 16,387 cm3
+            Rumfang[1] = 1.728M;         // 1 cu foot (ft3) = 1.728 in3
+            Rumfang[2] = 28.413M;         // 1 fluid ounce (fl oz) = 28,413 ml (Imperial) / 29,574 ml (US)
+            Rumfang[3] = 20;        // 1 pint (pt) = 20 fl oz (Imperial) / 16 fl oz (US)
+            Rumfang[4] = 8;         // 1 gallon (gal) = 8 pt
+
+            // Output til label resultat
+            lblInchRumfang.Content = (nummerRumfang * Rumfang[0]).ToString();
+            lblFootRumfang.Content = (nummerRumfang * Rumfang[1]).ToString();
+            lblFluidOunceRumfang.Content = (nummerRumfang * Rumfang[2]).ToString();
+            lblPintRumfang.Content = (nummerRumfang * Rumfang[3]).ToString();
+            lblgallonRumfang.Content = (nummerRumfang * Rumfang[4]).ToString();
+
+            // Output til label fra "værdi"
+            lblInch1.Content = nummerRumfang.ToString();
+            lblFoot1.Content = nummerRumfang.ToString();
+            lblYard1.Content = nummerRumfang.ToString();
+            lblMile1.Content = nummerRumfang.ToString();
+            lblNautical1.Content = nummerRumfang.ToString();
+
+            // Vægt [Slut]
