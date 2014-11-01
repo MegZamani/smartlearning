@@ -1,4 +1,31 @@
-  private void Button_Click(object sender, RoutedEventArgs e)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Opgave_2._4
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             //     Grundprisen er 17 kr.
             //     if         Til og med 0 til 4 år 100% rabat - 0kr
@@ -13,29 +40,29 @@
             // Til og med 0 til 4 år 100% rabat - 0kr
             if (alder <= 4)
             {
-            lblPris.Content = (0).ToString();
+                    lblPris.Content = (0).ToString();
             }
             //  5 til 15 år 50% rabat - 8,5 kr
             else if (alder <= 15)
             {
-            lblPris.Content = (grundpris / 2).ToString();
+                    lblPris.Content = (grundpris / 2).ToString();
             }
             // StudenterRabat med 25% rabat
             else if (alder <= 59)
             {
-            if (studenterRabat.IsChecked == true)
-            {
-            lblPris.Content = (grundpris / 1.25m).ToString();
-            }
-            if (studenterRabat.IsChecked == false)
-            {
-            lblPris.Content = (grundpris).ToString();
-            }
+                    if (studenterRabat.IsChecked == true)
+                    {
+                    lblPris.Content = (grundpris / 1.25m).ToString();
+                    }
+                    if (studenterRabat.IsChecked == false)
+                    {
+                    lblPris.Content = (grundpris).ToString();
+                    }
             }
             // 60 år eller ældre 50% rabat 8,5 kr
             else if (alder >= 60)
             {
-            lblPris.Content = (grundpris / 2).ToString();
+                   lblPris.Content = (grundpris / 2).ToString();
             }
         }
     }
