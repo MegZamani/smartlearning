@@ -1,0 +1,42 @@
+  private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //     Grundprisen er 17 kr.
+            //     if         Til og med 0 til 4 år 100% rabat - 0kr
+            //     if else    5 til 15 år 50% rabat - 8,5 kr
+            //     if else    16 til 59 Ingen rabat - 17  kr (StudenterRabat med 25% rabat)
+            //     if else    60 år eller ældre 50% rabat 8,5 kr
+
+            int alder;
+            decimal grundpris = 17;
+            //   grundpris = 17;
+            alder = Convert.ToInt32(btnTextBox.Text);
+            // Til og med 0 til 4 år 100% rabat - 0kr
+            if (alder <= 4)
+            {
+            lblPris.Content = (0).ToString();
+            }
+            //  5 til 15 år 50% rabat - 8,5 kr
+            else if (alder <= 15)
+            {
+            lblPris.Content = (grundpris / 2).ToString();
+            }
+            // StudenterRabat med 25% rabat
+            else if (alder <= 59)
+            {
+            if (studenterRabat.IsChecked == true)
+            {
+            lblPris.Content = (grundpris / 1.25m).ToString();
+            }
+            if (studenterRabat.IsChecked == false)
+            {
+            lblPris.Content = (grundpris).ToString();
+            }
+            }
+            // 60 år eller ældre 50% rabat 8,5 kr
+            else if (alder >= 60)
+            {
+            lblPris.Content = (grundpris / 2).ToString();
+            }
+        }
+    }
+}
